@@ -1,0 +1,223 @@
+/* Thiết lập cơ bản */
+body {
+    font-family: Arial, sans-serif;
+    background-color: hwb(198 85% 0% / 0.959);
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    padding: 0 80px;
+}
+
+.container {
+    max-width: 1100px; 
+    padding: 30px 20px;
+    background: white; 
+    border-radius: 12px;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    color: #08488b;
+}
+
+/* Khu vực Input */
+#chat-input-area {
+    margin-bottom: 40px;
+}
+
+.input-wrapper {
+    /* Tạo hộp nổi bật, bo góc, có bóng đổ */
+    border: 1px solid #ddd;
+    border-radius: 18px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Bóng đổ nhẹ */
+    padding: 15px;
+    background: #fdfdfd;
+}
+
+#text-input {
+    width: 100%;
+    height: 200px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 20px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+#check-button {
+    background-color: #8740f8;
+    color: rgb(255, 255, 255);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+}
+
+#check-button:hover {
+    background-color: #0056b3;
+}
+
+/* Khu vực Kết quả & Cảnh báo */
+.result-box {
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Định dạng màu sắc cho từng loại kết quả */
+.result-box.misinformation {
+    background-color: #ffe0e0; /* Đỏ nhạt cho cảnh báo mạnh */
+    border-left: 5px solid #ff4d4f;
+    color: #cc0000;
+}
+
+.result-box.unverified {
+    background-color: #fffbe6; /* Vàng nhạt cho cảnh báo nhẹ */
+    border-left: 5px solid #ffc107;
+    color: #8a6d3b;
+}
+
+.result-box.verified {
+    background-color: #e6ffed; /* Xanh lá nhạt cho xác minh thành công*/
+    border-left: 5px solid #5cb85c;
+    color: #3c763d;
+}
+
+.result-icon {
+    font-size: 30px;
+}
+
+/* Khu vực giải thích */
+#explanation-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f0f3f6;
+    border-radius: 8px;
+}
+
+.highlight {
+    background-color: #ffcc0066; /* Màu highlight các từ AI nghi ngờ */
+    font-weight: bold;
+}
+
+/* Ẩn/hiện và loading */
+.hidden {
+    display: none;
+}
+
+.spinner {
+    /* Thiết kế vòng xoay loading cơ bản */
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Màu sắc và font chữ chung */
+.mozilla-footer {
+    background-color: #f6f6f6; /* Màu nền xám nhạt */
+    color: #444; /* Màu chữ xám đậm */
+    padding: 30px 0;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #ddd;
+}
+
+.footer-inner-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 1. Bố cục chính: Sử dụng Flexbox để căn Logo và Links */
+.footer-logo-section {
+    display: flex;
+    align-items: flex-start; /* Căn lề trên cùng */
+    margin-bottom: 20px;
+}
+
+.logo-text {
+    font-size: 32px;
+    font-weight: 700;
+    margin-right: 30px; /* Khoảng cách giữa logo và liên kết */
+    color: #2c2c2c;
+    /* Có thể thêm icon nhỏ nếu cần, ở đây dùng text placeholder */
+}
+
+/* 2. Khu vực liên kết */
+.footer-links-section {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng nếu màn hình hẹp */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    color: #007bff; /* Màu xanh của link */
+    text-decoration: none;
+    font-size: 14px;
+    padding: 0 15px;
+    /* Thêm một đường gạch đứng nhỏ mô phỏng divider nếu cần */
+    border-right: 1px solid #ccc;
+}
+
+/* Loại bỏ gạch đứng cho liên kết cuối cùng */
+.footer-links-section a:last-child {
+    border-right: none;
+}
+
+/* Liên kết đầu tiên không cần padding trái */
+.footer-links-section a:first-child {
+    padding-left: 0;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* 3. Khu vực bản quyền */
+.footer-copyright p {
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 5px 0;
+    color: #666; 
+}
+
+.footer-copyright a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.footer-copyright a:hover {
+    text-decoration: underline;
+}
+
+body {
+    display: flex;
+    flex-direction: column; 
+}
+
+.site-content {
+    flex-grow: 1; 
+}
+
+/* 4. Ngăn footer bị co lại */
